@@ -13,10 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140807235558) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "customs", force: true do |t|
+  create_table "customs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
@@ -25,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140807235558) do
     t.string   "slug"
   end
 
-  create_table "experiences", force: true do |t|
+  create_table "experiences", force: :cascade do |t|
     t.string   "job_title"
     t.string   "company"
     t.string   "city"
@@ -41,14 +38,14 @@ ActiveRecord::Schema.define(version: 20140807235558) do
     t.string   "end_date"
   end
 
-  create_table "gravatars", force: true do |t|
+  create_table "gravatars", force: :cascade do |t|
     t.integer "user_id"
     t.boolean "show_image"
     t.boolean "use_custom_url"
     t.string  "custom_image_url"
   end
 
-  create_table "hobbies", force: true do |t|
+  create_table "hobbies", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
@@ -57,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140807235558) do
     t.string   "slug"
   end
 
-  create_table "objectives", force: true do |t|
+  create_table "objectives", force: :cascade do |t|
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -65,7 +62,7 @@ ActiveRecord::Schema.define(version: 20140807235558) do
     t.string   "slug"
   end
 
-  create_table "projects", force: true do |t|
+  create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.integer  "experience_id"
@@ -75,7 +72,7 @@ ActiveRecord::Schema.define(version: 20140807235558) do
     t.string   "url"
   end
 
-  create_table "references", force: true do |t|
+  create_table "references", force: :cascade do |t|
     t.string   "name"
     t.string   "relationship"
     t.string   "company"
@@ -87,14 +84,14 @@ ActiveRecord::Schema.define(version: 20140807235558) do
     t.string   "slug"
   end
 
-  create_table "resumes", force: true do |t|
+  create_table "resumes", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
   end
 
-  create_table "schools", force: true do |t|
+  create_table "schools", force: :cascade do |t|
     t.string   "name"
     t.string   "degree"
     t.integer  "year_graduated"
@@ -104,7 +101,7 @@ ActiveRecord::Schema.define(version: 20140807235558) do
     t.string   "slug"
   end
 
-  create_table "skills", force: true do |t|
+  create_table "skills", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
@@ -113,7 +110,7 @@ ActiveRecord::Schema.define(version: 20140807235558) do
     t.string   "slug"
   end
 
-  create_table "snippets", force: true do |t|
+  create_table "snippets", force: :cascade do |t|
     t.integer  "resume_id"
     t.string   "title"
     t.text     "description"
@@ -124,7 +121,7 @@ ActiveRecord::Schema.define(version: 20140807235558) do
     t.string   "programming_language"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "first_name"
     t.string   "last_name"

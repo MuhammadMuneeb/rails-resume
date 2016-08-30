@@ -6,7 +6,10 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Rails Resume" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "application.scss" %>
+    <%= stylesheet_link_tag    "foundation_and_overrides.scss" %>
+    <%= stylesheet_link_tag    "foundation-icons.scss" %>
+    <%= stylesheet_link_tag    "github.scss" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
